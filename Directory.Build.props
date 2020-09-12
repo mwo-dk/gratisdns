@@ -5,7 +5,7 @@
     <Company>mwo</Company>
     <Product>GratisDns helpers</Product>
     <Description>GratisDns helpers.</Description>
-    <Copyright>Copyright © 2020 Pine-Z</Copyright>
+    <Copyright>Copyright © 2020 mwodk</Copyright>
     <PackageIcon>icon.png</PackageIcon>
     <BuildNumber>1.0.0</BuildNumber>
     <Version>$(BuildNumber).0</Version>
