@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>GratisDns.Commander</AssemblyName>
+    <RootNamespace>GratisDns.Commander</RootNamespace>
+    <PackageId>gratisdns-cli</PackageId>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>gratisdns</ToolCommandName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Parsers.fs" />
+    <Compile Include="Options.fs" />
+    <Compile Include="Console.fs" />
+    <Compile Include="Commands.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\Utils\Utils.fsproj" />
+    <PackageReference Update="FSharp.Core" Version="4.7.2" />
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
