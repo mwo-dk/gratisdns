@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GratisDns": {
+      "commandName": "Project",
+      "commandLineArgs": "update www.mwo.dk"
+    }
+  }
+}

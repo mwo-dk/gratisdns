@@ -1,0 +1,24 @@
+<Project>
+  <PropertyGroup>
+    <Authors>Michael W. Olesen</Authors>
+    <Copyright>Michael W. Olesen</Copyright>
+    <Company>mwo</Company>
+    <Product>GratisDns helpers</Product>
+    <Description>GratisDns helpers.</Description>
+    <Copyright>Copyright © 2020 Pine-Z</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
+    <BuildNumber>1.0.0</BuildNumber>
+    <Version>$(BuildNumber).0</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+    <ProductVersion>$(BuildNumber)</ProductVersion>
+    <PackageVersion>$(BuildNumber)</PackageVersion>
+    <!--<PackageLicenseExpression>MIT</PackageLicenseExpression>-->
+    <PackageProjectUrl>https://github.com/mwo-dk/gratisdns</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mwo-dk/gratisdns</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+</Project>
