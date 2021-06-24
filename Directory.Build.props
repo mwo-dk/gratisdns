@@ -7,7 +7,7 @@
     <Description>GratisDns helpers.</Description>
     <Copyright>Copyright © 2021 mwo-dk</Copyright>
     <PackageIcon>icon.png</PackageIcon>
-    <BuildNumber>2.0.0</BuildNumber>
+    <BuildNumber>2.0.1</BuildNumber>
     <Version>$(BuildNumber).0</Version>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
