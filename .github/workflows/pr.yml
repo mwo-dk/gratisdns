@@ -12,7 +12,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.402
+        dotnet-version: 5.0.301
     - name: Build NuGet Packages
       run: dotnet pack -c Release -o ./nuget
     - name: Deploy NuGet Packages
