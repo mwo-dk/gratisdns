@@ -10,7 +10,7 @@ let private getIp() =
     printfn "Fetching publich IP address..."
     match getPublicIp() with
     | Some ipAddress ->
-        (fun () -> printf "Your public IP addresss is: ") |> useForegroundColor System.ConsoleColor.Green
+        (fun () -> printf "Your public IP address is: ") |> useForegroundColor System.ConsoleColor.Green
         (fun () -> printfn "%A" ipAddress) |> useForegroundColor System.ConsoleColor.White
         ipAddress |> Some
     | _ -> 
@@ -88,6 +88,38 @@ type UpdateCommand() as this =
                                 printfn "Error reason: %s" reason)
                     | _ -> ())
 
+type PingCommand() as this =
+    inherit CommandLineApplication()
+
+    let helpOption = HelpOption()
+
+    do
+        this |> setCmdName "ping"
+        this |> setCmdDescription "Pings the GratisDns service"
+
+        this |> withOption helpOption
+
+        this.OnExecute(fun () ->
+            if helpOption |> hasValue then
+                this.ShowHelp())
+
+type ServiceCommand() as this =
+    inherit CommandLineApplication()
+
+    let helpOption = HelpOption()
+
+    do
+        this |> setCmdName "service"
+        this |> setCmdDescription "Talks to the GratisDns service"
+
+        this |> withOption helpOption
+
+        this |> withCommand 0 (new PingCommand())
+
+        this.OnExecute(fun () ->
+            if helpOption |> hasValue then
+                this.ShowHelp())
+
 let logo = [|
     "   ______           __  _      ____  _   _______"
     "  / ____/________ _/ /_(_)____/ __ \/ | / / ___/"
@@ -112,7 +144,8 @@ type RootCommand() as this =
         this |> setCmdName "gratisdns"
         this |> setCmdDescription "The gratisdns root command"
         this |> withCommand 0 (new PublicIpCommand())
-        this |> withCommand 0 (new UpdateCommand())
+        this |> withCommand 1 (new UpdateCommand())
+        this |> withCommand 2 (new ServiceCommand())
 
         this.OnExecute(fun () ->
             printInfo()
